@@ -1,7 +1,7 @@
 const remote = require('electron').remote;
 const dialog = remote.dialog;
 
-var spaw = require('child_process').execFile;
+var spawn = require('child_process').execFile;
 
 
 function onload() {
@@ -9,7 +9,7 @@ function onload() {
         mac.disabled = true;
     }
     if (process.platform == 'darwin') {
-        win32.disabled = true;
+        windows.disabled = true;
     }
 }
 
@@ -19,7 +19,7 @@ function select_project() {
     options.properties = ['openDirectory'];
     dialog.showOpenDialog(options, (res)=>{
         console.log(res);
-        project_idr.value = res;
+        project_dir.value = res;
     });
 }
 
@@ -29,7 +29,7 @@ function select_output() {
     options.properties = ['openDirectory', 'createDirectory'];
     dialog.showOpenDialog(options, (res)=>{
         console.log(res);
-        output_idr.value = res;
+        output_dir.value = res;
     });
 }
 
@@ -74,13 +74,15 @@ function pack() {
         cmd += '.cmd';
     }
     // 开始执行electron-packager
+    // 异步执行
     spawn(cmd, args, (err, stdout, stderr)=> {
        if (err) {
            console.error('stderr', stderr)
+           packager_status.innerText = "打包失败";
        } else {
-
+            packager_status.innerText = "打包成功";
        }
     });
-
+    packager_status.innerText = "正在打包, 请稍候...";
 
 }
