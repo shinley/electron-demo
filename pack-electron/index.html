@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>打包工具</title>
+    <link rel="stylesheet" href="bootcss/css/bootstrap.min.css">
+<!--    <script src="bootcss/js/bootstrap.min.js"></script>-->
+    <script>
+        window.$ = window.jQuery = require('./bootcss/js/jquery-3.4.1.min.js');
+        require('./bootcss/js/bootstrap.min.js');
+    </script>
+    <script src="event.js"></script>
+
+    <style>
+        body, html {
+            margin: 0px;
+            padding: 0px;
+        }
+        .container{
+           padding: 30px;
+        }
+    </style>
+</head>
+<body onload="onload()">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+        </div>
+        <div class="col-lg-6">
+            <div class="input-group">
+                <input type="text" class="form-control" id="project_idr" placeholder="项目目录">
+                <span class="input-group-btn">
+                <button class="btn btn-default" onclick="select_project()" type="button">工程目录</button>
+            </span>
+            </div>
+        </div>
+        <div class="col-lg-3">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+        </div>
+        <div class="col-lg-6">
+            <div class="input-group">
+                <input type="text" class="form-control" id="output_idr" placeholder="项目目录">
+                <span class="input-group-btn">
+                <button class="btn btn-default" onclick="select_output()" type="button">输出目录</button>
+            </span>
+            </div>
+        </div>
+        <div class="col-lg-3">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+        </div>
+        <div class="col-lg-6">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" id="mac"> Mac
+                </label>
+                <label>
+                    <input type="checkbox" id="linux"> Linux
+                </label>
+                <label>
+                    <input type="checkbox" id="win32"> Windows
+                </label>
+            </div>
+        </div>
+        <div class="col-lg-3">
+        </div>
+    </div>
+</div>
+</body>
+</html>

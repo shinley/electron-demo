@@ -1,0 +1,19 @@
+{
+  "name": "pack-electron",
+  "version": "1.0.0",
+  "description": "打包程序",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "打包"
+  ],
+  "author": "shinley",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^3.4.1",
+    "electron": "^6.0.10",
+    "jquery": "^3.4.1"
+  }
+}
